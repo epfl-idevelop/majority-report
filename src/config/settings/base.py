@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tequila',
+    'majority',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_tequila.middleware.TequilaMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -120,3 +123,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTHENTICATION_BACKENDS = ('django_tequila.django_backend.TequilaBackend',)
+TEQUILA_SERVICE_NAME = "Majority Report"
+
+LOGIN_URL = "/login"
+LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_IF_NOT_ALLOWED = "/not_allowed"
+LOGOUT_URL = '/'
+
+AUTH_PROFILE_MODULE = "majority.userprofile"

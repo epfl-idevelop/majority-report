@@ -1,0 +1,3 @@
+django==1.11
+ipython
+unipath==1.1

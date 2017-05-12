@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_tequila',
     'majority',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +133,4 @@ LOGIN_REDIRECT_URL = "/"
 LOGIN_REDIRECT_IF_NOT_ALLOWED = "/not_allowed"
 LOGOUT_URL = '/'
 
-AUTH_PROFILE_MODULE = "majority.userprofile"
+AUTH_PROFILE_MODULE = "userprofile.userprofile"

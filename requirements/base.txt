@@ -2,3 +2,4 @@ django==1.11
 ipython
 unipath==1.1
 django-tequila==2.1.7
+djangorestframework==3.6.2

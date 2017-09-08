@@ -1,3 +1,5 @@
+from statistics import median
+
 from django.db import models
 
 
@@ -14,6 +16,14 @@ class Option(models.Model):
     """An option for a vote"""
     name = models.CharField(max_length=1000)
     vote = models.ForeignKey(Vote, related_name='options')
+    option_id = models.IntegerField()
+
+    def compute_evaluations_median(self):
+        evaluations = self.evaluations.order_by('evaluation').values_list('evaluation', flat=True)
+        if len(evaluations) == 0:
+            return 0
+        else:
+            return median(evaluations)
 
     def __str__(self):
         return self.name

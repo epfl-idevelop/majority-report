@@ -134,3 +134,11 @@ LOGIN_REDIRECT_IF_NOT_ALLOWED = "/not_allowed"
 LOGOUT_URL = '/'
 
 AUTH_PROFILE_MODULE = "userprofile.userprofile"
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+}
